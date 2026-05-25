@@ -14,7 +14,7 @@ parser code {:
 /* O CUP usará isso para gerar o sym.java que o seu Lexer precisa            */
 /* ========================================================================= */
 
-terminal IF, THEN, ELSE, WHILE;
+terminal EOF, IF, THEN, ELSE, WHILE;
 terminal ASSIGN, LPAREN, RPAREN, LBRACE, RBRACE, SEMI;
 terminal String ID, NUMBER;
 terminal String ADD_OP, MUL_OP, REL_OP;
@@ -44,7 +44,7 @@ precedence left MUL_OP;
 start with program;
 
 /* TODO 2: Como definir um programa que é uma lista de comandos? */
-program ::= stmt_list ;
+program ::= stmt_list EOF ;
 
 /* TODO 3: Como definir uma lista recursiva no BNF? */
 stmt_list ::= stmt_list stmt
